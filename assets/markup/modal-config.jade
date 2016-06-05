@@ -1,0 +1,54 @@
+div(class="modal fade" id="configModal" tabindex="-1" role="dialog" aria-labelledby="configModalLabel" aria-hidden="true")
+    div(class="modal-dialog" role="document")
+        div(class="modal-content")
+            div(class="modal-header")
+                button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                    span(aria-hidden="true") &times;
+                    span(class="sr-only") Close
+
+            div(class="modal-body")
+
+                form
+                    div(class="form-group row")
+                        label(for="dragarea" class="col-sm-4 form-control-label") Dragarea based on
+                        div(class="col-sm-8")
+                            //input(type="email" class="form-control" id="inputEmail3" placeholder="Email")
+                            select(id="dragarea" class="c-select form-control" style="width:100%")
+                                option(value="0.79" selected) Average car
+                                option(value="0.65") Average bicycle
+                                option(value="0.575999") Tesla MS
+                                option(value="0.575999") Toyota Prius
+                                option(value="0.62245") Chevrolet Volt
+                                option(value="0.724644") Nissan Leaf
+                                option(value="0.69") BMW i3 BEV
+                                option(value="0.71") BMW i3 REX
+
+                    //div(class="form-group row")
+                    //    label(for="owmkey" class="col-sm-4 form-control-label") OpenWeatherMap key
+                    //    div(class="col-sm-8")
+                    //        input(type="text" class="form-control" id="owmkey" placeholder="Enter a valid key")
+
+                    div(class="form-group row")
+                        label(for="shownumbers" class="col-sm-4 form-control-label") Show numbers
+                        div(class="col-sm-8")
+                            input(type="checkbox" style="margin-top: 10px;" class="form-control" id="shownumbers" name="shownumbers")
+
+                    div(class="form-group row")
+                        label(for="debuglogging" class="col-sm-4 form-control-label") Log position (debugging)
+                        div(class="col-sm-8")
+                            input(type="checkbox" style="margin-top: 10px;" class="form-control" id="debuglogging" name="debuglogging")
+
+
+                //div(class="row")
+                //    div(class="col-md-12" style="padding-top:1em")
+                //        label(for="dragarea") Tesla login
+                //        form(class="form-inline")
+                //            div(class="form-group")
+                //                label(class="sr-only" for="email") Email
+                //                input(type="text" class="form-control" id="email" placeholder="Enter email")
+                //            div(class="form-group")
+                //                label(class="sr-only" for="password")
+                //                input(type="password" class="form-control" id="password" placeholder="Password")
+                //            button(type="button" id="teslasignin" class="btn btn-primary") Sign in
+            div(class="modal-footer")
+                div(id="uid")

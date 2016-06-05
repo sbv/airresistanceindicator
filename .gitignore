@@ -31,3 +31,12 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+assets/markup/google*.html
+
+replacekeywords.js
+
+.idea
+*.iml
+
+assets.json

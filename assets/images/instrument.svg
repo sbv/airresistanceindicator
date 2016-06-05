@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   x="0px"
+   y="0px"
+   viewBox="0 0 100 100"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   id="svg2">
+    <path
+            d="m 58.304071,93.99072 c 16.269039,-6.4408 27.777765,-22.3216 27.777765,-40.8822 0,-24.2697 -19.672986,-43.94264 -43.942787,-43.94264 -16.778962,0 -31.357337,9.41179 -38.7606996,23.23652"
+            id="path3871"
+            style="fill:none;stroke:#c6c6c6;stroke-width:0.48341924;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <path
+            d="m 57.728196,93.14572 c 16.00832,-6.3041 27.332613,-21.8482 27.332613,-40.015"
+            id="path-positive-wind"
+            style="fill:none;stroke:#2eff3f;stroke-width:2.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray: 51.4729, 51.4729; stroke-dashoffset: 51.4729;" />
+    <path
+            d="m 85.066284,53.159401 c 0,-23.734664 -19.215335,-42.973935 -42.920554,-42.973935 -16.388634,0 -30.627875,9.204315 -37.8590143,22.724307"
+            id="path-air"
+            style="fill:none;stroke:#ff7d2e;stroke-width:2.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray: 113.852, 113.852; stroke-dashoffset: 113.852;" />
+    <text
+     x="90.537743"
+     y="54.823246"
+     id="text3968"
+     xml:space="preserve"
+     style="font-size:6.46165609px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#c6c6c6;fill-opacity:1;stroke:none;font-family:Sans"><tspan
+       x="90.537743"
+       y="54.823246"
+       id="tspan3970"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#c6c6c6;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial">kW</tspan></text>
+  <text
+     x="9.6293306"
+     y="11.430972"
+     id="text3972"
+     xml:space="preserve"
+     style="font-size:6.46165609px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#c6c6c6;fill-opacity:1;stroke:none;font-family:Sans"><tspan
+       x="9.6293306"
+       y="11.430972"
+       id="tspan3974"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#c6c6c6;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial">30</tspan></text>
+  <text
+     x="68.088303"
+     y="12.48566"
+     id="text3976"
+     xml:space="preserve"
+     style="font-size:6.46165609px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#c6c6c6;fill-opacity:1;stroke:none;font-family:Sans"><tspan
+       x="68.088303"
+       y="12.48566"
+       id="tspan3978"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#c6c6c6;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial">15</tspan></text>
+  <text
+     x="67.93763"
+     y="95.503418"
+     id="text3980"
+     xml:space="preserve"
+     style="font-size:6.46165609px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#c6c6c6;fill-opacity:1;stroke:none;font-family:Sans"><tspan
+       x="67.93763"
+       y="95.503418"
+       id="tspan3982"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#c6c6c6;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial">-15</tspan></text>
+  <text
+     x="30.519747"
+     y="82.308105"
+     id="text4003"
+     xml:space="preserve"
+     style="font-size:6.46165609px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#c6c6c6;fill-opacity:1;stroke:none;font-family:Sans"><tspan
+       x="30.519747"
+       y="82.308105"
+       id="tspan4005"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#c6c6c6;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial">Air     <tspan
+   id="averageairenergyperkilometer"
+   style="fill:#ffffff;fill-opacity:1">0</tspan></tspan></text>
+  <text
+     x="23.519697"
+     y="73.995605"
+     id="text4092"
+     xml:space="preserve"
+     style="font-size:6.46165609px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#c6c6c6;fill-opacity:1;stroke:none;font-family:Sans"><tspan
+       x="23.519697"
+       y="73.995605"
+       id="tspan4094"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#c6c6c6;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial">Wind     <tspan
+   id="averagewindenergyperkilometer"
+   style="fill:#ffffff;fill-opacity:1">0</tspan></tspan></text>
+  <text
+     x="41.311485"
+     y="65.683044"
+     id="text4098"
+     xml:space="preserve"
+     style="font-size:6.46165609px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#c6c6c6;fill-opacity:1;stroke:none;font-family:Sans"><tspan
+       x="41.311485"
+       y="65.683044"
+       id="tspan4100"
+       style="font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#c6c6c6;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial">Avg. Wh/km</tspan></text>
+    <path
+            d="m 85.066284,53.159401 c 0,-23.734664 -19.215335,-42.973935 -42.920554,-42.973935 -16.388634,0 -30.627875,9.204315 -37.8590143,22.724307"
+            id="path-negative-wind"
+            style="fill:none;stroke:#ff2e2e;stroke-width:2.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray: 113.852, 113.852; stroke-dashoffset: 113.852;" />
+</svg>

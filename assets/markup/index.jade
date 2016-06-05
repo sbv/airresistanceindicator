@@ -1,0 +1,111 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(http-equiv="x-ua-compatible" content="ie=edge")
+        meta(description="This tool use your speed to calculate how much energy it takes to push your vehicle through the air.")
+        meta(keywords="air,resistance,indicator,wind,flow,drag,energy,calculate,vehicle,dragarea,instrument,tool")
+
+        title Air Resistance Indicator
+
+        link(rel="apple-touch-icon", sizes="57x57", href="apple-touch-icon-57x57.png")
+        link(rel="apple-touch-icon", sizes="60x60", href="apple-touch-icon-60x60.png")
+        link(rel="apple-touch-icon", sizes="72x72", href="apple-touch-icon-72x72.png")
+        link(rel="apple-touch-icon", sizes="76x76", href="apple-touch-icon-76x76.png")
+        link(rel="apple-touch-icon", sizes="114x114", href="apple-touch-icon-114x114.png")
+        link(rel="apple-touch-icon", sizes="120x120", href="apple-touch-icon-120x120.png")
+        link(rel="apple-touch-icon", sizes="144x144", href="apple-touch-icon-144x144.png")
+        link(rel="apple-touch-icon", sizes="152x152", href="apple-touch-icon-152x152.png")
+        link(rel="apple-touch-icon", sizes="180x180", href="apple-touch-icon-180x180.png")
+        link(rel="icon", type="image/png", href="favicon-32x32.png", sizes="32x32")
+        link(rel="icon", type="image/png", href="android-chrome-192x192.png", sizes="192x192")
+        link(rel="icon", type="image/png", href="favicon-96x96.png", sizes="96x96")
+        link(rel="icon", type="image/png", href="favicon-16x16.png", sizes="16x16")
+        link(rel="manifest", href="manifest.json")
+        meta(name="msapplication-TileColor", content="#00a300")
+        meta(name="msapplication-TileImage", content="/mstile-144x144.png")
+        meta(name="theme-color", content="#ffffff")
+
+        link(rel="stylesheet" href="bootstrap.min.css")
+        link(rel="stylesheet" href="font-awesome/css/font-awesome.min.css")
+        link(rel="stylesheet" title="day" href="#{locals['dist/main-day.css'].substr(5)}")
+        link(rel="stylesheet" title="night" href="#{locals['dist/main-night.css'].substr(5)}")
+        link(rel="icon" type="image/png" href="favicon.png")
+
+        link(rel="stylesheet" href="bootstrap-switch.min.css")
+
+    body
+        //div(id="locationAlert")
+        //    div(style="padding: 5px;")
+        //        div(id="inner-message" class="alert alert-danger inner" role="alert")
+        //            strong Need position
+        //            text Your location is&nbsp;
+        //            strong(id="secondsSinceLastLocation") 1
+        //            text sec old.
+
+        div(id="weatherAlert")
+            div(style="padding: 5px;")
+                div(id="inner-message" class="alert alert-danger inner" role="alert")
+                    strong Need weather
+                    text Are you offline?
+
+        div(class="wrapper")
+            div(class="container")
+                div(class="row" style="margin-top:2em;")
+                    div(class="pull-left col-xs-6")
+                        i(class="fa fa-sun-o fa-2x" style="color:gray;cursor: pointer;" id="day")
+                        i(class="fa fa-moon-o fa-2x" id="night")
+                    div(class="col-xs-offset-3 col-xs-2")
+                        i(class="fa fa-info-circle fa-2x pull-right" style="cursor: pointer;" id="info")
+                    div(class="col-xs-1")
+                        i(class="fa fa-cog fa-2x pull-right" style="cursor: pointer;" id="cog")
+
+
+                div(class="row")
+                    div(class="col-md-push-4 col-md-4" style="text-align:center;")
+                        div(class="svgcontainer")
+                            include ../images/instrument.svg
+
+                //div(class="row")
+                    div(id="windimpact" class="col-md-12" style="display:none;text-align:center;")
+                        h5 Wind impact on energy consumption
+                        h5(class="display-4")
+                            span(id="windimpactonconsumption") -
+                        p %
+
+                div(class="row")
+                    div(id="airresistance" class="col-md-push-3 col-md-3" style="display:none;text-align:center;")
+                        p Air Part:
+                            text
+                            span(id="poweronairdrag") -
+                            text
+                            span(id="poweronairdragunit") kW
+                    div(id="windpart" class="col-md-push-3 col-md-3" style="display:block;text-align:center;")
+                        p Wind Part:
+                            text
+                            span(id="poweronwinddrag") -
+                            text
+                            span(id="poweronwinddragunit") kW
+                div(class="row")
+                    div(id="speed" class="col-md-push-3 col-md-3" style="display:none;text-align:center;")
+                        p Speed:
+                            text
+                            span(id="velocity") -
+                            text km/h
+                    div(id="windangleoncar" class="col-md-push-3 col-md-3" style="display:block;text-align:center;")
+                        p Wind angle on car:
+                            text
+                            span(id="windangle") -
+                            text deg.
+
+        include ./modal-config.jade
+        include ./modal-info.jade
+
+        script(src="jquery.min.js")
+        script(src="tether.min.js")
+        script(src="bootstrap.min.js")
+        script(src="firebase.js")
+        script(src="bootstrap-switch.min.js")
+        script(src="progressbar.min.js")
+        script(src="#{locals['dist/main.js'].substr(5)}")
