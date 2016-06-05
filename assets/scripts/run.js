@@ -345,7 +345,7 @@ var Run = module.exports = {
   //  debug.addConsoleToDiv();
 
     if(Run.debuglogging) {
-      firebase = new Firebase("https://blistering-inferno-6017.firebaseio.com");
+      firebase = new Firebase("@firebaserepourl@");
     }
 
   //  generateGPSVisualizerData();

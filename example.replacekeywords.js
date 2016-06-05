@@ -16,3 +16,10 @@ replace({
     silent: true
 });
 
+replace({
+    regex: "@firebaserepourl@",
+    replacement: "<<firebaserepourl>>",
+    paths: ['./dist'],
+    recursive: true,
+    silent: true
+});
