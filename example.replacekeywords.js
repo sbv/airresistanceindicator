@@ -7,3 +7,12 @@ replace({
     recursive: true,
     silent: true
 });
+
+replace({
+    regex: "@googleanalyticskey@",
+    replacement: "<<googleanalyticskey>>",
+    paths: ['./dist'],
+    recursive: true,
+    silent: true
+});
+
