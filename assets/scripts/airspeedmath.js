@@ -59,7 +59,6 @@ var AirspeedMath = module.exports = {
   },
 
   isPositionValid: function (pos) {
-    if (AirspeedMath.isSamePosition(pos)) return false;
     if (AirspeedMath.isNearlySameTimestamp(pos)) return false;
     if (AirspeedMath.isAccuracyTooLow(pos)) return false;
     return true;
@@ -236,6 +235,7 @@ var AirspeedMath = module.exports = {
   },
 
   getPowerOnAirInclWindDrag: function () {
+    if(AirspeedMath.getGroundSpeed() == 0) return 0;
     return 0.5 * 1.2 * Math.pow(AirspeedMath.getGroundSpeed() + AirspeedMath.getDirectWindSpeed(), 3) * AirspeedMath.dragarea;
   },
 

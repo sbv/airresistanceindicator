@@ -50,12 +50,8 @@ function setPositionIfValid(pos) {
 }
 
 function replayTrip() {
-//  var userRef = firebase.child("anonymous:-JxY4OyMvdXwze4uaeXu"); // tur i tesla
-//  var userRef = firebase.child("anonymous:-Jx8pWRh360r9qAzDFPD"); // iphone snurretoppen
-//  var userRef = firebase.child("2450fe97-ff36-411b-8c2b-52d3b2d5c1d7"); // iphone snurretoppen
-//  var userRef = firebase.child("59ace767-6316-4d88-943f-15a7957af147"); // iphone hjemme
-  var userRef = firebase.child("a255e26a-cf58-4b37-b50d-6840d66ce04e"); // iphone 6 mod fredericia
-  userRef.on("value", function (snapshot) {
+  var userRef = firebase.child('uuid');
+  userRef.on('value', function (snapshot) {
     //TODO add and set from firebase
     am.setDragArea(0.575999);
 
@@ -64,7 +60,7 @@ function replayTrip() {
     var posTS = 0;
 
     var positionArray = [];
-    var positions1 = snapshot.val().trip['sometime'].positions;
+    var positions1 = snapshot.val().trip['-timestamp-'].positions;
     for (var position in positions1) {
       if (positions1.hasOwnProperty(position)) {
         positionArray.push(positions1[position]);
@@ -217,11 +213,17 @@ function nowString() {
   if(mm<10){
     mm='0'+mm
   }
+  if(hh<10){
+    hh='0'+hh
+  }
+  if(minutes<10){
+    minutes='0'+minutes
+  }
   return yyyy+mm+dd+'-'+hh+minutes;
 }
 
 var lastWeatherUpdate = 0;
-var tripId = 'sometime';
+var tripId = nowString();
 function handlePosition(pos) {
 
   var now = new Date();
@@ -349,7 +351,7 @@ var Run = module.exports = {
     }
 
   //  generateGPSVisualizerData();
-//    replayTrip();
+  //  replayTrip();
     init();
     updateNumbers();
     updateBars();
