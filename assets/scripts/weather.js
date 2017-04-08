@@ -20,7 +20,8 @@ var Weather = module.exports = {
     Weather.openWeatherMapRequestCallback = callback;
     Weather.openWeatherMapRequest = new XMLHttpRequest();
     Weather.openWeatherMapRequest.onreadystatechange = saveOpenWeatherMapResponse;
-    Weather.openWeatherMapRequest.open("GET", "http://api.openweathermap.org/data/2.5/weather?APPID="+appId+"&lat="+position.coords.latitude+"&lon="+position.coords.longitude, true);
+//    Weather.openWeatherMapRequest.open("GET", "http://api.openweathermap.org/data/2.5/weather?APPID="+appId+"&lat="+position.coords.latitude+"&lon="+position.coords.longitude, true);
+    Weather.openWeatherMapRequest.open("GET", "weatherproxy.php?lat="+position.coords.latitude+"&lon="+position.coords.longitude, true);
     Weather.openWeatherMapRequest.send();
   }
 };

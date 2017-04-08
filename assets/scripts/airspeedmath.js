@@ -229,18 +229,18 @@ var AirspeedMath = module.exports = {
     AirspeedMath.dragarea = dragarea;
   },
 
-  getPowerOnWindDrag: function () {
-    if (!AirspeedMath.weatherData) return 0;
-    return AirspeedMath.getPowerOnAirInclWindDrag() - AirspeedMath.getPowerOnAirDrag();
-  },
-
   getPowerOnAirInclWindDrag: function () {
     if(AirspeedMath.getGroundSpeed() == 0) return 0;
     return 0.5 * 1.2 * Math.pow(AirspeedMath.getGroundSpeed() + AirspeedMath.getDirectWindSpeed(), 3) * AirspeedMath.dragarea;
   },
 
+  getPowerOnWindDrag: function () {
+    if (!AirspeedMath.weatherData) return 0;
+    return AirspeedMath.getPowerOnAirInclWindDrag() * (AirspeedMath.getDirectWindSpeed() / (AirspeedMath.getGroundSpeed() + AirspeedMath.getDirectWindSpeed()));
+  },
+
   getPowerOnAirDrag: function () {
-    return 0.5 * 1.2 * Math.pow(AirspeedMath.getGroundSpeed(), 3) * AirspeedMath.dragarea;
+    return AirspeedMath.getPowerOnAirInclWindDrag() * (AirspeedMath.getGroundSpeed() / (AirspeedMath.getGroundSpeed() + AirspeedMath.getDirectWindSpeed()));
   },
 
   getWindImpactOnConsumption: function () {

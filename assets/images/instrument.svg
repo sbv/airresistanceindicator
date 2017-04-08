@@ -13,6 +13,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    version="1.1"
    id="svg2">
+    <polygon id="wind-arrowhead" points="78,51 80,53 78,55" style="fill:#c6c6c6;stroke-width:0" transform="rotate(-135, 42, 53)"></polygon>
+    <circle id="wind-dot" cx="19" cy="71.5" r="2" stroke-width="0" fill="#ff2e00"></circle>
+    <circle id="air-dot" cx="19" cy="80" r="2" stroke-width="0" fill="#ff7d00"></circle>
     <path
             d="m 58.304071,93.99072 c 16.269039,-6.4408 27.777765,-22.3216 27.777765,-40.8822 0,-24.2697 -19.672986,-43.94264 -43.942787,-43.94264 -16.778962,0 -31.357337,9.41179 -38.7606996,23.23652"
             id="path3871"
@@ -20,18 +23,18 @@
     <path
             d="m 57.728196,93.14572 c 16.00832,-6.3041 27.332613,-21.8482 27.332613,-40.015"
             id="path-positive-wind"
-            style="fill:none;stroke:#2eff3f;stroke-width:2.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray: 51.4729, 51.4729; stroke-dashoffset: 51.4729;" />
+            style="fill:none;stroke:#2eff3f;stroke-width:3.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray: 51.4729, 51.4729; stroke-dashoffset: 51.4729;" />
     <path
             d="m 85.066284,53.159401 c 0,-23.734664 -19.215335,-42.973935 -42.920554,-42.973935 -16.388634,0 -30.627875,9.204315 -37.8590143,22.724307"
             id="path-air"
-            style="fill:none;stroke:#ff7d2e;stroke-width:2.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray: 113.852, 113.852; stroke-dashoffset: 113.852;" />
+            style="fill:none;stroke:#ff7d00;stroke-width:3.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray: 113.852, 113.852; stroke-dashoffset: 113.852;" />
     <text
      x="90.537743"
      y="54.823246"
      id="text3968"
      xml:space="preserve"
      style="font-size:6.46165609px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#c6c6c6;fill-opacity:1;stroke:none;font-family:Sans"><tspan
-       x="90.537743"
+        x="90.537743"
        y="54.823246"
        id="tspan3970"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#c6c6c6;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial">kW</tspan></text>
@@ -102,5 +105,5 @@
     <path
             d="m 85.066284,53.159401 c 0,-23.734664 -19.215335,-42.973935 -42.920554,-42.973935 -16.388634,0 -30.627875,9.204315 -37.8590143,22.724307"
             id="path-negative-wind"
-            style="fill:none;stroke:#ff2e2e;stroke-width:2.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray: 113.852, 113.852; stroke-dashoffset: 113.852;" />
+            style="fill:none;stroke:#ff2e00;stroke-width:3.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray: 113.852, 113.852; stroke-dashoffset: 113.852;" />
 </svg>

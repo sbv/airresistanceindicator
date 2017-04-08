@@ -50,7 +50,8 @@ function setPositionIfValid(pos) {
 }
 
 function replayTrip() {
-  var userRef = firebase.child('uuid');
+  firebase = new Firebase("@firebaserepourl@");
+  var userRef = firebase.child("a255e26a-cf58-4b37-b50d-6840d66ce04e");
   userRef.on('value', function (snapshot) {
     //TODO add and set from firebase
     am.setDragArea(0.575999);
@@ -60,7 +61,7 @@ function replayTrip() {
     var posTS = 0;
 
     var positionArray = [];
-    var positions1 = snapshot.val().trip['-timestamp-'].positions;
+    var positions1 = snapshot.val().trip['sometime'].positions;
     for (var position in positions1) {
       if (positions1.hasOwnProperty(position)) {
         positionArray.push(positions1[position]);
@@ -317,6 +318,7 @@ function updateWeatherData(weatherData) {
 
 function updateNumbers() {
   ui.updateNumbers(am);
+  ui.updateArrow(am);
   setTimeout(updateNumbers, 200);
 }
 
@@ -353,6 +355,7 @@ var Run = module.exports = {
   //  generateGPSVisualizerData();
   //  replayTrip();
     init();
+    
     updateNumbers();
     updateBars();
   },

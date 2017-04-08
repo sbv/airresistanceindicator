@@ -1,6 +1,6 @@
 {
   "name": "airresistanceindicator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "calculates how much energy it takes to push your vehicle through the air",
   "keywords": [
     "air",

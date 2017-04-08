@@ -44,6 +44,17 @@ var UI = module.exports = {
   averageAirEnergyPerKilometerUIValue: 0,
   averageWindEnergyPerKilometerUIValue: 0,
 
+  updateArrow: function (am) {
+
+    var windangleoncar = am.getAngleBetweenWindAndBearing();
+        if(windangleoncar === null) {
+          document.getElementById("wind-arrowhead").style.display = 'none';
+        } else {
+          document.getElementById("wind-arrowhead").style.display = 'block';
+          document.getElementById("wind-arrowhead").setAttribute("transform", "rotate("+Math.round(-90+UI.windangleUIValue)+", 42, 53)");
+        }    
+  },
+
   updateBars: function (am) {
     var poweronairdrag = am.getPowerOnAirInclWindDrag();
     if(poweronairdrag === null) {

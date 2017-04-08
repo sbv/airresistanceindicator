@@ -314,14 +314,15 @@ describe('AirspeedMath', function () {
     am.setPosition(testPositions[1]);
 
     assert.equal(75.57922239300487, am.getDistance());
-    assert.equal(254.31940333940264, am.getBearing());  // sydøst
+    assert.equal(254.31940333939963, am.getBearing());  // sydøst
     assert.equal(37.01235180852345, am.getGroundSpeed()); // 133 km/t
-    assert.equal(195.68059666059736, am.getAngleBetweenWindAndBearing());
-    assert.equal(-4.428803320974124, am.getDirectWindSpeed());
-    assert.equal(32.58354848754932, am.getAirSpeed());
-    assert.equal(11955.510274973776, am.getPowerOnAirInclWindDrag());
-    assert.equal(-5567.673856251471, am.getPowerOnWindDrag());
-    assert.equal(-11.965744149103841, am.getWindImpactOnConsumption());
+    assert.equal(195.68059666060037, am.getAngleBetweenWindAndBearing());
+    assert.equal(-4.428803320974058, am.getDirectWindSpeed());
+    assert.equal(32.58354848754939, am.getAirSpeed());
+    assert.equal(11955.510274973853, am.getPowerOnAirInclWindDrag());
+    assert.equal(13580.520627359996, am.getPowerOnAirDrag()); // 17523.184131225247
+    assert.equal(-1625.0103523861449, am.getPowerOnWindDrag()); // -5567.673856251395
+    assert.equal(-11.965744149103664, am.getWindImpactOnConsumption());
     assert.equal(36, am.mps2kmph(10));
   });
 });
