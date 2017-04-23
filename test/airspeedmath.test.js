@@ -325,4 +325,16 @@ describe('AirspeedMath', function () {
     assert.equal(-11.965744149103664, am.getWindImpactOnConsumption());
     assert.equal(36, am.mps2kmph(10));
   });
+
+    it('testUpdateTripEnergy', function () {
+    am.setWeatherData(testWeather[0]);
+    am.setPosition(testPositions[0]);
+    assert.equal(0, am.tripWindEnergy);
+    assert.equal(0, am.tripAirEnergy); 
+    console.log('bøf bøf bøf');
+    am.setPosition(testPositions[1]);
+    assert.equal(-0.9217419832145854, am.tripWindEnergy);
+    assert.equal(7.7031730891858645, am.tripAirEnergy); 
+  });
+
 });

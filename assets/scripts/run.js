@@ -51,7 +51,10 @@ function setPositionIfValid(pos) {
 
 function replayTrip() {
   firebase = new Firebase("@firebaserepourl@");
-  var userRef = firebase.child("a255e26a-cf58-4b37-b50d-6840d66ce04e");
+//  var userRef = firebase.child("a255e26a-cf58-4b37-b50d-6840d66ce04e");
+//  var userRef = firebase.child("bc8a492f-cee7-4a57-8041-491c837a040f");
+  var userRef = firebase.child("6050d01a-0c11-4212-83eb-0c671838cb64");
+
   userRef.on('value', function (snapshot) {
     //TODO add and set from firebase
     am.setDragArea(0.575999);
@@ -61,7 +64,10 @@ function replayTrip() {
     var posTS = 0;
 
     var positionArray = [];
-    var positions1 = snapshot.val().trip['sometime'].positions;
+//    var positions1 = snapshot.val().trip['sometime'].positions;
+//    var positions1 = snapshot.val().trip['20170411-1706'].positions;
+    var positions1 = snapshot.val().trip['20170414-1719'].positions;
+
     for (var position in positions1) {
       if (positions1.hasOwnProperty(position)) {
         positionArray.push(positions1[position]);
@@ -353,8 +359,8 @@ var Run = module.exports = {
     }
 
   //  generateGPSVisualizerData();
-  //  replayTrip();
-    init();
+    replayTrip();
+  //  init();
     
     updateNumbers();
     updateBars();

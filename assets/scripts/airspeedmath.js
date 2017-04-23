@@ -95,11 +95,13 @@ var AirspeedMath = module.exports = {
   tripWindEnergy: 0,
   updateTripWindEnergy: function () {
     AirspeedMath.tripWindEnergy += AirspeedMath.getPowerOnWindDrag() * (timeBetweenPositions() / (60 * 60 * 1000));
+    if(isNaN(AirspeedMath.tripWindEnergy)) AirspeedMath.tripWindEnergy = 0;
   },
 
   tripAirEnergy: 0,
   updateTripAirEnergy: function () {
     AirspeedMath.tripAirEnergy += AirspeedMath.getPowerOnAirDrag() * (timeBetweenPositions() / (60 * 60 * 1000));
+    if(isNaN(AirspeedMath.tripAirEnergy)) AirspeedMath.tripAirEnergy = 0;
   },
 
   tripTime: 0,
@@ -134,6 +136,8 @@ var AirspeedMath = module.exports = {
     AirspeedMath.oldgroundspeed = undefined;
     AirspeedMath.tripTime = 0;
     AirspeedMath.tripDistance = 0;
+    AirspeedMath.tripWindEnergy = 0;
+    AirspeedMath.tripAirEnergy = 0;
   },
 
   setWeatherData: function (weatherData) {
@@ -240,6 +244,7 @@ var AirspeedMath = module.exports = {
   },
 
   getPowerOnAirDrag: function () {
+    if (!AirspeedMath.weatherData) return 0;
     return AirspeedMath.getPowerOnAirInclWindDrag() * (AirspeedMath.getGroundSpeed() / (AirspeedMath.getGroundSpeed() + AirspeedMath.getDirectWindSpeed()));
   },
 
