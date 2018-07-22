@@ -388,11 +388,17 @@ var Run = module.exports = {
   },
 
   change_dragarea: function () {
-    var radios = document.getElementsByName('dragarea');
-    for (var i = 0, length = radios.length; i < length; i++) {
-        if (radios[i].checked) {
-            //console.log("radios[i].id: "+radios[i].id);
-            cookies.set('dragarea', radios[i].id, { expires: 365 });
+    console.log("change to "+document.getElementById('dragarea').value);
+    cookies.set('dragarea', document.getElementById('dragarea').value, { expires: 365 });
+  },
+
+  select_dragarea: function (event) {
+    console.log("event.currentTarget.id: "+event.currentTarget.id);
+    for (var i = 0, length = am.dragareaOptions.length; i < length; i++) {
+        if (am.dragareaOptions[i].id === event.currentTarget.id) {
+            console.log("found "+am.dragareaOptions[i].id);
+            document.getElementById('dragarea').value = am.dragareaOptions[i].value;
+            cookies.set('dragarea', am.dragareaOptions[i].value, { expires: 365 });
             break;
         }
     }
@@ -480,9 +486,9 @@ var Run = module.exports = {
       switch_style( css_title );
     }
     if(cookies.get('dragarea')) {
-      var select = document.getElementById(cookies.get('dragarea'));
-      select.checked = true;
-      //TODO if list changes - cookie select wrong index
+        document.getElementById('dragarea').value = cookies.get('dragarea');
+    } else {
+        document.getElementById('dragarea').value = am.dragareaOptions[0].value;
     }
 //    ui.owmkeyChanged();
     ui.shownumbersChanged();

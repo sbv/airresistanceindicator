@@ -10,46 +10,42 @@ div(class="modal fade" id="configModal" tabindex="-1" role="dialog" aria-labelle
 
                 form
                     div(class="form-group row")
-                        label(for="dragarea" class="col-sm-4 form-control-label") Dragarea based on
-                        div(class="col-sm-8")
-                            div(class="form-check")
-                                label(class="form-check-label")
-                                    input(type="radio" class="form-check-input" name="dragarea" id="dragarea_option1" value="0.79" checked)
-                                    text Average car
-                            div(class="form-check")
-                                label(class="form-check-label")
-                                    input(type="radio" class="form-check-input" name="dragarea" id="dragarea_option2" value="0.65")
-                                    text Average bicycle
-                            div(class="form-check")
-                                label(class="form-check-label")
-                                    input(type="radio" class="form-check-input" name="dragarea" id="dragarea_option3" value="0.575999")
-                                    text Tesla MS
-                            div(class="form-check")
-                                label(class="form-check-label")
-                                    input(type="radio" class="form-check-input" name="dragarea" id="dragarea_option4" value="0.575999")
-                                    text Toyota Prius
-                            div(class="form-check")
-                                label(class="form-check-label")
-                                    input(type="radio" class="form-check-input" name="dragarea" id="dragarea_option5" value="0.62245")
-                                    text Chevrolet Volt
-                            div(class="form-check")
-                                label(class="form-check-label")
-                                    input(type="radio" class="form-check-input" name="dragarea" id="dragarea_option6" value="0.724644")
-                                    text Nissan Leaf
-                            div(class="form-check")
-                                label(class="form-check-label")
-                                    input(type="radio" class="form-check-input" name="dragarea" id="dragarea_option7" value="0.69")
-                                    text BMW i3 BEV
-                            div(class="form-check")
-                                label(class="form-check-label")
-                                    input(type="radio" class="form-check-input" name="dragarea" id="dragarea_option8" value="0.71")
-                                    text BMW i3 REX
+                        label(for="dragarea" class="col-sm-4 form-control-label") Dragarea
+                            br
+                            text (area * drag coefficient)
+                        div(class="col-sm-4")
+                            input(class="form-control" type="number" value="0.79" id="dragarea")
+
+                    div(class="form-group row")
+                        div(class="col-sm-12")
+                            button(type="button" class="btn btn-dragarea btn-outline-primary btn-sm" id="dragarea_tesla_s")
+                                text Tesla S (2.34 * 0.24)
+                            button(type="button" class="btn btn-dragarea btn-outline-primary btn-sm" id="dragarea_tesla_3")
+                                text Tesla 3 (2.22 * 0.23)
+                            button(type="button" class="btn btn-dragarea btn-outline-primary btn-sm" id="dragarea_tesla_x")
+                                text Tesla X (2.59 * 0.24)
+                            button(type="button" class="btn btn-dragarea btn-outline-primary btn-sm" id="dragarea_avg_car")
+                                text Average car
+                            button(type="button" class="btn btn-dragarea btn-outline-primary btn-sm" id="dragarea_avg_bicycle")
+                                text Average bicycle
+                            button(type="button" class="btn btn-dragarea btn-outline-primary btn-sm" id="dragarea_prius")
+                                text Toyota Prius
+                            button(type="button" class="btn btn-dragarea btn-outline-primary btn-sm" id="dragarea_volt")
+                                text Chevrolet Volt
+                            button(type="button" class="btn btn-dragarea btn-outline-primary btn-sm" id="dragarea_leaf")
+                                text Nissan Leaf
+                            button(type="button" class="btn btn-dragarea btn-outline-primary btn-sm" id="dragarea_i3")
+                                text BMW i3 BEV
+                            button(type="button" class="btn btn-dragarea btn-outline-primary btn-sm" id="dragarea_i3_rex")
+                                text BMW i3 REX
+
 
                     //div(class="form-group row")
                     //    label(for="owmkey" class="col-sm-4 form-control-label") OpenWeatherMap key
                     //    div(class="col-sm-8")
                     //        input(type="text" class="form-control" id="owmkey" placeholder="Enter a valid key")
 
+                    div(class="form-group row")
                     div(class="form-group row")
                         label(for="shownumbers" class="col-sm-4 form-control-label") Show numbers
                         div(class="col-sm-8")

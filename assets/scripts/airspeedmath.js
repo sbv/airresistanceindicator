@@ -54,6 +54,19 @@ function timeBetweenPositions() {
 
 var AirspeedMath = module.exports = {
 
+    dragareaOptions: [
+        {id: 'dragarea_avg_car', value:'0.79'},
+        {id: 'dragarea_avg_bicycle', value:'0.65'},
+        {id: 'dragarea_tesla_s', value:'0.5616'},
+        {id: 'dragarea_tesla_3', value:'0.5106'},
+        {id: 'dragarea_tesla_x', value:'0.6216'},
+        {id: 'dragarea_prius', value:'0.575999'},
+        {id: 'dragarea_leaf', value:'0.724644'},
+        {id: 'dragarea_volt', value:'0.62245'},
+        {id: 'dragarea_i3', value:'0.69'},
+        {id: 'dragarea_i3_rex', value:'0.71'}
+    ],
+
   isWeatherDataValid: function (weatherData) {
     return weatherData.wind && weatherData.wind.deg;
   },

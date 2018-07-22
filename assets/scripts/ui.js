@@ -79,9 +79,9 @@ var UI = module.exports = {
   },
 
   updateNumbers: function (am) {
-    var elm = document.getElementById(Cookies.get('dragarea'));
+    var elm = document.getElementById('dragarea');
     var selectedDragarea = parseFloat(elm.value);
-    //console.log('selectedDragarea: '+selectedDragarea);
+    console.log('selectedDragarea: '+selectedDragarea);
     //TODO only set when config closes
     am.setDragArea(selectedDragarea);
 

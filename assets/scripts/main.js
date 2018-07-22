@@ -1,6 +1,7 @@
 'use strict';
 
 var run = require('./run');
+var am = require('./airspeedmath');
 
 window.addEventListener('DOMContentLoaded', run.setup_from_url);
 window.addEventListener('DOMContentLoaded', run.setup_from_cookie);
@@ -9,14 +10,11 @@ document.getElementById('day').onclick = run.switch_to_day;
 document.getElementById('night').onclick = run.switch_to_night;
 document.getElementById('cog').onclick = run.show_settings;
 document.getElementById('info').onclick = run.show_info;
-document.getElementById('dragarea_option1').onchange = run.change_dragarea;
-document.getElementById('dragarea_option2').onchange = run.change_dragarea;
-document.getElementById('dragarea_option3').onchange = run.change_dragarea;
-document.getElementById('dragarea_option4').onchange = run.change_dragarea;
-document.getElementById('dragarea_option5').onchange = run.change_dragarea;
-document.getElementById('dragarea_option6').onchange = run.change_dragarea;
-document.getElementById('dragarea_option7').onchange = run.change_dragarea;
-document.getElementById('dragarea_option8').onchange = run.change_dragarea;
+document.getElementById('dragarea').onchange = run.change_dragarea;
+for (var i = 0, length = am.dragareaOptions.length; i < length; i++) {
+    console.log("am.dragareaOptions[i].id "+am.dragareaOptions[i].id);
+    document.getElementById(am.dragareaOptions[i].id).onclick = run.select_dragarea;
+}
 //document.getElementById('owmkey').onchange = run.change_owmkey;
 
 $('[name="shownumbers"]').bootstrapSwitch();
