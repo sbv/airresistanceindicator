@@ -388,15 +388,15 @@ var Run = module.exports = {
   },
 
   change_dragarea: function () {
-    console.log("change to "+document.getElementById('dragarea').value);
+//    console.log("change to "+document.getElementById('dragarea').value);
     cookies.set('dragarea', document.getElementById('dragarea').value, { expires: 365 });
   },
 
   select_dragarea: function (event) {
-    console.log("event.currentTarget.id: "+event.currentTarget.id);
+//    console.log("event.currentTarget.id: "+event.currentTarget.id);
     for (var i = 0, length = am.dragareaOptions.length; i < length; i++) {
         if (am.dragareaOptions[i].id === event.currentTarget.id) {
-            console.log("found "+am.dragareaOptions[i].id);
+//            console.log("found "+am.dragareaOptions[i].id);
             document.getElementById('dragarea').value = am.dragareaOptions[i].value;
             cookies.set('dragarea', am.dragareaOptions[i].value, { expires: 365 });
             break;
@@ -485,7 +485,7 @@ var Run = module.exports = {
     if (css_title && css_title.length) {
       switch_style( css_title );
     }
-    if(cookies.get('dragarea')) {
+    if(!isNaN(cookies.get('dragarea'))) {
         document.getElementById('dragarea').value = cookies.get('dragarea');
     } else {
         document.getElementById('dragarea').value = am.dragareaOptions[0].value;

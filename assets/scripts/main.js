@@ -12,7 +12,7 @@ document.getElementById('cog').onclick = run.show_settings;
 document.getElementById('info').onclick = run.show_info;
 document.getElementById('dragarea').onchange = run.change_dragarea;
 for (var i = 0, length = am.dragareaOptions.length; i < length; i++) {
-    console.log("am.dragareaOptions[i].id "+am.dragareaOptions[i].id);
+//    console.log("am.dragareaOptions[i].id "+am.dragareaOptions[i].id);
     document.getElementById(am.dragareaOptions[i].id).onclick = run.select_dragarea;
 }
 //document.getElementById('owmkey').onchange = run.change_owmkey;
