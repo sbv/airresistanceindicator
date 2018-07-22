@@ -359,8 +359,8 @@ var Run = module.exports = {
     }
 
   //  generateGPSVisualizerData();
-    replayTrip();
-  //  init();
+//    replayTrip();
+    init();
     
     updateNumbers();
     updateBars();
@@ -388,8 +388,14 @@ var Run = module.exports = {
   },
 
   change_dragarea: function () {
-    var select = document.getElementById('dragarea');
-    cookies.set('dragarea', select.selectedIndex, { expires: 365 });
+    var radios = document.getElementsByName('dragarea');
+    for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            //console.log("radios[i].id: "+radios[i].id);
+            cookies.set('dragarea', radios[i].id, { expires: 365 });
+            break;
+        }
+    }
   },
 
 //  change_owmkey: function () {
@@ -474,8 +480,8 @@ var Run = module.exports = {
       switch_style( css_title );
     }
     if(cookies.get('dragarea')) {
-      var select = document.getElementById('dragarea');
-      select.selectedIndex = cookies.get('dragarea');
+      var select = document.getElementById(cookies.get('dragarea'));
+      select.checked = true;
       //TODO if list changes - cookie select wrong index
     }
 //    ui.owmkeyChanged();
