@@ -89,7 +89,7 @@ function replayTrip() {
 
       setWeatherForTS(weathers, posTS);
       if(setPositionIfValid(pos)){
-        console.log(createDebugString(pos));
+//        console.log(createDebugString(pos));
       }
 //      var delay = oldPosTS!=0?(posTS - oldPosTS)/2.0:0;
       var delay = 1000;
@@ -325,12 +325,28 @@ function updateWeatherData(weatherData) {
 function updateNumbers() {
   ui.updateNumbers(am);
   ui.updateArrow(am);
-  setTimeout(updateNumbers, 200);
+  setTimeout(updateNumbers, 1000);
 }
 
 function updateBars() {
   ui.updateBars(am);
   setTimeout(updateBars, 1000);
+}
+
+function updateUrlFromCookie() {
+//    console.log('updateUrlFromCookie: ' + window.location.hash);
+    var hash = '';
+    if(cookies.get('dragarea')) {
+        hash += 'dragarea='+cookies.get('dragarea');
+    }
+    if(cookies.get('shownumbers')) {
+        hash += '&shownumbers='+cookies.get('shownumbers');
+    }
+    if(cookies.get('debuglogging')) {
+        hash += '&debuglogging='+cookies.get('debuglogging');
+    }
+    window.location.hash = hash;
+//    console.log('updated: ' + window.location.hash);
 }
 
 function switch_style ( css_title ) {
@@ -390,6 +406,7 @@ var Run = module.exports = {
   change_dragarea: function () {
 //    console.log("change to "+document.getElementById('dragarea').value);
     cookies.set('dragarea', document.getElementById('dragarea').value, { expires: 365 });
+    updateUrlFromCookie();
   },
 
   select_dragarea: function (event) {
@@ -399,6 +416,7 @@ var Run = module.exports = {
 //            console.log("found "+am.dragareaOptions[i].id);
             document.getElementById('dragarea').value = am.dragareaOptions[i].value;
             cookies.set('dragarea', am.dragareaOptions[i].value, { expires: 365 });
+            updateUrlFromCookie();
             break;
         }
     }
@@ -416,15 +434,17 @@ var Run = module.exports = {
 
   change_shownumbers: function () {
     var input = document.getElementById('shownumbers');
-    cookies.set('shownumbers', input.checked?"true":"", { expires: 365 });
+    cookies.set('shownumbers', input.checked?"true":"false", { expires: 365 });
+    updateUrlFromCookie();
     ui.shownumbersChanged();
   },
 
   change_debuglogging: function () {
     var input = document.getElementById('debuglogging');
-    cookies.set('debuglogging', input.checked?"true":"", { expires: 365 });
+    cookies.set('debuglogging', input.checked?"true":"false", { expires: 365 });
+    updateUrlFromCookie();
     ui.debugloggingChanged();
-    Run.debuglogging = cookies.get('debuglogging');
+    Run.debuglogging = cookies.get('debuglogging') ==='true';
   },
 
   tesla_signin: function () {
@@ -471,14 +491,27 @@ var Run = module.exports = {
     signinRequest.send();
   },
 
-//  setup_from_url: function() {
-//    var myRegexp = /owmkey\/([a-z0-9]+)/g;
-//    var match = myRegexp.exec(window.location.hash);
-//    if(match) {
-//      document.getElementById('owmkey').value = match[1];
-//      Run.change_owmkey();
-//    }
-//  },
+  setup_from_url: function() {
+//    console.log('setup_from_url: ' + window.location.hash);
+    var myRegexp = /dragarea=(0.[a-z0-9]+)/g;
+    var match = myRegexp.exec(window.location.hash);
+    if(match) {
+      cookies.set('dragarea', match[1]);
+//      console.log('dragarea: ' + match[1]);
+    }
+    myRegexp = /shownumbers=(true)/g;
+    var match = myRegexp.exec(window.location.hash);
+    if(match) {
+      cookies.set('shownumbers', match[1]);
+//      console.log('shownumbers: ' + match[1]);
+    }
+    myRegexp = /debuglogging=(true)/g;
+    var match = myRegexp.exec(window.location.hash);
+    if(match) {
+      cookies.set('debuglogging', match[1]);
+//      console.log('debuglogging: ' + match[1]);
+    }
+  },
 
   setup_from_cookie: function() {
     var css_title = cookies.get('style');
@@ -493,7 +526,7 @@ var Run = module.exports = {
 //    ui.owmkeyChanged();
     ui.shownumbersChanged();
     ui.debugloggingChanged();
-    Run.debuglogging = cookies.get('debuglogging');
+    Run.debuglogging = cookies.get('debuglogging') === 'true';
 
   //  document.getElementById('password').value = cookies.get('password')?cookies.get('password'):'';
   //  document.getElementById('email').value = cookies.get('email')?cookies.get('email'):'';

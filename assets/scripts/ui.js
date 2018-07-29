@@ -18,12 +18,12 @@ var UI = module.exports = {
   },
 
   shownumbersChanged: function () {
-    $('input[name="shownumbers"]').bootstrapSwitch('state', !!Cookies.get('shownumbers'), true);
+    $('input[name="shownumbers"]').bootstrapSwitch('state', Cookies.get('shownumbers') === 'true', true);
 
-    document.getElementById('airresistance').style.display = Cookies.get('shownumbers') ? 'block' : 'none';
-    document.getElementById('speed').style.display = Cookies.get('shownumbers') ? 'block' : 'none';
-    document.getElementById('windangleoncar').style.display = Cookies.get('shownumbers') ? 'block' : 'none';
-    document.getElementById('windpart').style.display = Cookies.get('shownumbers') ? 'block' : 'none';
+    document.getElementById('airresistance').style.display = Cookies.get('shownumbers') === 'true' ? 'block' : 'none';
+    document.getElementById('speed').style.display = Cookies.get('shownumbers') === 'true' ? 'block' : 'none';
+    document.getElementById('windangleoncar').style.display = Cookies.get('shownumbers') === 'true' ? 'block' : 'none';
+    document.getElementById('windpart').style.display = Cookies.get('shownumbers') === 'true' ? 'block' : 'none';
   },
 
 //  owmkeyChanged: function () {
@@ -34,7 +34,7 @@ var UI = module.exports = {
 //  },
 
   debugloggingChanged: function () {
-    $('input[name="debuglogging"]').bootstrapSwitch('state', !!Cookies.get('debuglogging'), true);
+    $('input[name="debuglogging"]').bootstrapSwitch('state', Cookies.get('debuglogging') === 'true', true);
   },
 
   poweronairdragUIValue: 0,
@@ -45,7 +45,6 @@ var UI = module.exports = {
   averageWindEnergyPerKilometerUIValue: 0,
 
   updateArrow: function (am) {
-
     var windangleoncar = am.getAngleBetweenWindAndBearing();
         if(windangleoncar === null) {
           document.getElementById("wind-arrowhead").style.display = 'none';
@@ -107,7 +106,16 @@ var UI = module.exports = {
       document.getElementById("averagewindenergyperkilometer").textContent = Math.round(UI.averageWindEnergyPerKilometerUIValue);
     }
 
-    if(Cookies.get('shownumbers')) {
+    var windangleoncar = am.getAngleBetweenWindAndBearing();
+    if(windangleoncar === null) {
+        document.getElementById("windangle").innerText = '-';
+    } else {
+        if(UI.windangleUIValue < windangleoncar) UI.windangleUIValue += (windangleoncar - UI.windangleUIValue) / 2.0;
+        else if(UI.windangleUIValue > windangleoncar) UI.windangleUIValue -= (UI.windangleUIValue - windangleoncar) / 2.0;
+        document.getElementById("windangle").innerText = Math.round(UI.windangleUIValue);
+    }
+
+      if(Cookies.get('shownumbers') === 'true') {
       //animate
 
       var poweronairdrag = am.getPowerOnAirDrag();
@@ -139,15 +147,6 @@ var UI = module.exports = {
             document.getElementById("poweronwinddrag").innerText = Math.round(UI.poweronwinddragUIValue);
             document.getElementById("poweronwinddragunit").innerText = 'Watt';
           }
-        }
-
-        var windangleoncar = am.getAngleBetweenWindAndBearing();
-        if(windangleoncar === null) {
-          document.getElementById("windangle").innerText = '-';
-        } else {
-          if(UI.windangleUIValue < windangleoncar) UI.windangleUIValue += (windangleoncar - UI.windangleUIValue) / 2.0;
-          else if(UI.windangleUIValue > windangleoncar) UI.windangleUIValue -= (UI.windangleUIValue - windangleoncar) / 2.0;
-          document.getElementById("windangle").innerText = Math.round(UI.windangleUIValue);
         }
 //      }
 
